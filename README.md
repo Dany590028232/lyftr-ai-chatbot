@@ -12,8 +12,10 @@ React (Vite, nginx)  ──HTTP/JSON──▶  FastAPI  ──▶  LiteLLM (cach
 
 | Tier     | URL |
 |----------|-----|
-| Frontend | `https://<your-frontend>.vercel.app` |
-| Backend  | `https://<your-backend>.onrender.com` (try `/health`, `/docs`) |
+| Frontend | https://lyftr-ai-chatbot-eta.vercel.app |
+| Backend  | https://lyftr-ai-backend-2lfk.onrender.com (try `/health`, `/docs`) |
+
+The backend runs on Render's free tier. It sleeps after about 15 minutes idle, so the first request can take around 50 seconds to wake it. The free tier has no persistent disk, so chat history resets on redeploy; locally, `make up` keeps it in the `chat-data` volume.
 
 ## 2. Run locally
 
