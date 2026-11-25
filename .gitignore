@@ -1,0 +1,17 @@
+# secrets & local data
+.env
+*.db
+!.env.example
+
+# python
+venv/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# node
+node_modules/
+dist/
+
+.DS_Store
