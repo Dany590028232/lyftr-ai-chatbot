@@ -29,6 +29,12 @@ SIMULATABLE_STATUSES = {"429", "500", "502", "503"}
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     init_db()
+    logger.info("Startup: %d API key(s) configured", len(API_KEYS))
+    if len(API_KEYS) < 2:
+        logger.error(
+            "LLM_API_KEYS must contain at least 2 comma-separated keys; "
+            "/health will return 503 until it does"
+        )
     yield
 
 
